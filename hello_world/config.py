@@ -1,8 +1,4 @@
-# release branch
-# TODO: Remove this later
-# some debug comments from testing
+# develop branch
 def process_data():
-    value = compute_value()  # debugging
-    # printing temporarily
-    print("debug")
+    value = compute_value()
     return value
