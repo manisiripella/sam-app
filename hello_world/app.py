@@ -34,4 +34,5 @@ def hello():
 # ensures metrics are flushed upon request completion/failure and capturing ColdStart metric
 @metrics.log_metrics(capture_cold_start_metric=True)
 def lambda_handler(event: dict, context: LambdaContext) -> dict:
+    print("hello world")
     return app.resolve(event, context)
