@@ -22,6 +22,7 @@ def hello():
     # structured log
     # See: https://awslabs.github.io/aws-lambda-powertools-python/latest/core/logger/
     logger.info("Hello world API - HTTP 200")
+    return {"messageeee": "hello worldddd"}
     return {"message": "hello world"}
 
 
@@ -34,4 +35,5 @@ def hello():
 # ensures metrics are flushed upon request completion/failure and capturing ColdStart metric
 @metrics.log_metrics(capture_cold_start_metric=True)
 def lambda_handler(event: dict, context: LambdaContext) -> dict:
+    return app.resolve(event, context)
     return app.resolve(event, context)
